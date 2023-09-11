@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Labs</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div class="chatbot-section" id="chatIcon">
+        
+        <div class="chatbot-icon" id="chat-bot-icon-closed">
+            <div class="chatbot-container-image-closed"></div>
+        </div>
+
+        <div class="chatbot-icon disable" id="chat-bot-icon-open">
+            <div class="chatbot-container-image-opened"></div>
+        </div>
+
+        <div class="chatbot-window disable" id="chatWindow">
+            <div class="chat-bot-header">
+                <div class="chatbot-window-header">
+                    <img src="./assets/chatbot_img/chat-container-icon.png" alt="ChatBot container icon.">
+    
+                    <button class="chatbot-header-text" id="larger-button">
+                        <p class="chatbot-header-paragraph">Expandir</p>
+                        <img src="./assets/chatbot_img/expandir.png" alt="Ícone para expandir a página." >
+                    </button>
+    
+                    <button class="chatbot-header-text disable" id="small-button">
+                        <p class="chatbot-header-paragraph">Recolher</p>
+                        <img src="./assets/chatbot_img/recolher.png" alt="Ícone para expandir a página." >
+                    </button>
+                </div>
+                
+                <div class="help-container">
+                    <img src="./assets/chatbot_img/Como_posso_ajudar_.png" alt="Como posso ajudar?">
+                </div>
+                
+                <div class="window-black-line"></div>
+            </div>
+
+            <div class="chat-bot-body" id="chat-area">
+
+                <!-- Aqui terão as mensagens -->
+
+                <div class="chat-content">
+                    <p>role pra cima <img src="./assets/chatbot_img/up-arrow.png" alt="Setinha para cima."> para ver o histórico</p>
+                </div>
+
+            </div>
+            
+            <div class="chat-bot-footer">
+                <div class="chatbot-text-area">
+                    <div class="text-input-container">
+                        <input type="text" id="chatbot-text-input" placeholder="Digite a sua dúvida" onkeydown="checkEnter(event)">
+                    </div>
+                    <button class="chat-bot-post-button" id="button-submit" onclick="sendMessage()">
+                    
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <main>
+        
+
+        <section class="image-section-container">
+            
+            <div class="header">
+                <h1>
+                    <img src="assets/imgs/logo_branca.png" alt="Logo Sem Processo Branca">
+                </h1>
+                
+                <nav class="header-list">
+                    <a href="#" class="header-list-item-link">Cases</a>
+                    <a href="https://www.semprocesso.com.br/contato" class="header-list-item-link">Contato</a>
+                </nav>
+            </div>
+
+            <div class="image-section-background"></div>
+            
+            <div class="image-section-div">
+                <h2 class="image-section-div-h2">Imagine, crie, 
+                    implemente e <span class="image-section-div-h2-evolua">evolua</span></h2>
+                <p class="image-section-div-text">Porque não basta resolver apenas os conflitos do mundo do direito.</p>
+                <a class="image-section-div-button" href="#">Inicie a sua jornada</a>
+                
+            </div>
+        </section>
+
+        <section class="solution-section">
+        
+            <div class="solution-section-title">
+                <h3 class="solution-section-title-h3">Problemas complexos. <br> Soluções <span class="solution-section-title-complexas">complexas</span> <i>criativas</i>_</h3>
+                <p class="solution-section-title-text">Confira nossos cases de sucesso que vão além do mundo juridico.</p>
+            </div>
+
+            <div class="solution-section-options" id="solutions-container">
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-section-text-container">
+                <h3 class="video-section-text-container-title">Quem são, o que fazem, onde vivem?</h3>
+                <p class="video-section-text-container-paragraph">Não precisa embedar o vídeo do Rick Astley Remastered 4K 60 FPS, pode ser qualquer outro vídeo da sua escolha, mas queremos dar play.</p>
+            </div>
+            <div class="video-container">
+                <iframe class="third-section-video" width="512px" height="288px" src="https://www.youtube.com/embed/7jMlFXouPk8?si=1pR2rBIzspBai-2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h3 class="form-section-title">Não fique parado, fale conosco</h3>
+            <form method="post" action="" class="form" id="form">
+                <input class="form-input-content" type="text" placeholder="Seu nome" required id="input-name">
+                <input class="form-input-content" type="email" placeholder="Seu e-mail" required id="input-email">
+                <select class="form-input-content select" name="segmento" id="segmento" required>
+                    <option>Seu segmento</option>
+                    <option value="Direito">Direito</option>
+                    <option value="Administrativo">Administrativo</option>
+                    <option value="Empresarial">Empresarial</option>
+                </select>
+                
+                <textarea class="form-input-content form-input-content-textarea-height" type="text" placeholder="Fale um pouco sobre o seu negócio" id="input-text" required></textarea>
+                <div class="checkbox-container">
+                    <label class="checkbox" >
+                        <input class="checkbox-input" type="checkbox" id="checkbox-input">
+                        <span class="checkbox-checkmark">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </label>
+                    <p class="form-checkbox-description">Declaro que conheço a Política de Privacidade e autorizo a utilização das minhas informações pelo SP Labs</p>
+
+                </div>
+                <button type="submit" class="button button-background-color undefined">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-elements-container">
+            <div class="footer-logo-container">
+                <img src="assets/imgs/logo_preta.png" alt="Logo Sem Processo Preta">
+            </div>
+            <div class="footer-links-container">
+                <div class="footer-links-container-rights">
+                    <h4 class="footer-titles">SP Labs</h4>
+                    <p class="footer-paragraph"><a href="#" class="footer-anchor-links">Política de Privacidade</a></p>
+                </div>
+
+                <div class="footer-links-container-rights" id="footer-second-div">
+                    <h4 class="footer-titles">Sem Processo</h4>
+                    <ul class="footer-links-container-list">
+                        <li class="footer-links-container-list-item"><a href="https://www.semprocesso.com.br/" class="footer-anchor-links">Site</a></li>
+                        <li class="footer-links-container-list-item"><a href="https://www.semprocesso.com.br/#produtos" class="footer-anchor-links">Produtos</a></li>
+                        <li class="footer-links-container-list-item"><a href="https://www.semprocesso.com.br/blog" class="footer-anchor-links">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-line-container">
+            <div class="footer-line-decoration"></div>
+            <p class="footer-line-container-paragraph">SP Labs 2022. Feito por Lian Mendes.</p>
+        </div>
+        
+    </footer>
+    <section class="thanks-message-section disable"  id="thanks-section">
+        <div class="thx-message-section">
+            <div class="thx-message">
+                <div class="thx-message-button-container">
+                    <button class="thx-message-button" id="exit-button">
+                        <img class="thx-message-image" src="./assets/imgs/x.png" alt="X">
+                    </button>
+                </div>
+                
+                <div class="thx-message-image-container">
+                    <p class="thx-message-paragraph" id="thx-message-box">Obrigado pelo contato Nome!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+
+</body>
+<script src="script.js"></script>
+</html>
