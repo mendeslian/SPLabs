@@ -306,6 +306,7 @@ section, footer {
 .image-section-container {
     height: 100vh;
     background-position: center;
+    box-sizing: border-box;
     background-image: url(./assets/imgs/background-image.jpg);
     background-size: cover;
 }
